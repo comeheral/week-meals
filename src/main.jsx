@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from './pages/Home';
-import Settings from './pages/Settings';
+import Meals from './pages/Meals';
 
 import './scss/reset.scss';
 import './scss/main.scss';
@@ -14,8 +14,8 @@ const router = createBrowserRouter([
     element: <Home />
   },
   {
-    path: "/settings",
-    element: <Settings />
+    path: "/meals",
+    element: <Meals />
   }
 ])
 

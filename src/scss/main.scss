@@ -11,3 +11,23 @@ body{
   font-weight: 700;
   margin-bottom: 20px;
 }
+
+.button{
+  font-family: 'Lexend', sans-serif;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  background: #ffe768;
+  padding: 16px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg{
+    display: block;
+    width: 16px;
+    height: auto;
+    margin-right: 10px;
+  }
+}

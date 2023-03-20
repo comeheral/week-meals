@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { mealsData } from '../mealsData'
+import '../scss/pages/Meals.scss';
 
 import MealItem from '../components/MealItem';
 
-import '../scss/pages/Settings.scss';
 
 function Settings(){
   const [mealsList, setMealsList] = useState(mealsData);
@@ -30,7 +30,7 @@ function Settings(){
     <>
       <h1 className="title">Liste des plats</h1>
       {mealsList.map((meal, index) => (
-        <MealItem key={`meal-${index}`} name={meal.name} index={index} onDelete={deleteItem} />
+        <MealItem key={`meal-${index}`} name={meal.name} index={index} canDelete={true} onDelete={deleteItem} />
       ))}
       <form className="add-form" onSubmit={addItem}>
         <input className="add-form__input" onChange={(e) => setUserInput(e.target.value)} type="text" value={userInput} placeholder="Ajouter un plat"/>
