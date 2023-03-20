@@ -19,11 +19,18 @@ function Settings(){
     setUserInput("");
   }
 
+  function deleteItem(e){
+    let index = parseInt(e.target.closest('.meal').getAttribute('data-index'));
+    let updatedList = [...mealsList];
+    updatedList.splice(index,1);
+    setMealsList(updatedList)
+  }
+
   return (
     <>
       <h1 className="title">Liste des plats</h1>
       {mealsList.map((meal, index) => (
-        <MealItem key={`meal-${index}`} name={meal.name} />
+        <MealItem key={`meal-${index}`} name={meal.name} index={index} onDelete={deleteItem} />
       ))}
       <form className="add-form" onSubmit={addItem}>
         <input className="add-form__input" onChange={(e) => setUserInput(e.target.value)} type="text" value={userInput} placeholder="Ajouter un plat"/>
