@@ -1,8 +1,12 @@
+import { useState } from 'react'
+
 import '../scss/components/MealItem.scss'
 
 function MealItem(props){
+  const [checked, setChecked] = useState(false);
+
   return (
-    <div className="meal" data-index={props.index}>
+    <div className={`meal ${checked ? 'meal--checked' : ''}`} data-index={props.index} onClick={() => setChecked(!checked)}>
       <p className="meal__name">{props.name}</p>
       {props.canDelete && (
         <div className="meal__delete" onClick={props.onDelete}>
