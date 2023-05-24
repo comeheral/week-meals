@@ -1,14 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
 
-import Home from './pages/Home';
-import Meals from './pages/Meals';
+import App from './App';
 
 import './scss/reset.scss';
 import './scss/main.scss';
 
-const router = createBrowserRouter([
+/* onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log('user signed in')
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+  } else {
+    console.log('user signed out')
+    // User is signed out
+    // ...
+  }
+}); */
+
+/* const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />
@@ -16,11 +31,17 @@ const router = createBrowserRouter([
   {
     path: "/meals",
     element: <Meals />
+  },
+  {
+    path: "/signup",
+    element: <SignUp />
   }
-])
+]) */
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 )
