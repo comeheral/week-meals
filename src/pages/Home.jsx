@@ -44,7 +44,7 @@ function Home(){
       </div>
 
       {weekMeals.map((meal, index) => (
-        <MealItem key={`meal-${index}`} name={meal.name} index={index}/>
+        <MealItem key={`meal-${index}`} name={meal.name} index={index} canCheck={true}/>
       ))}
     </>
   )

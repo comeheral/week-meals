@@ -6,7 +6,7 @@ function MealItem(props){
   const [checked, setChecked] = useState(false);
 
   return (
-    <div className={`meal ${checked ? 'meal--checked' : ''}`} data-index={props.index} onClick={() => setChecked(!checked)}>
+    <div className={`meal ${checked ? 'meal--checked' : ''}`} data-index={props.index} onClick={() => props.canCheck ? setChecked(!checked) : ''}>
       <p className="meal__name">{props.name}</p>
       {props.canDelete && (
         <div className="meal__delete" onClick={props.onDelete}>
